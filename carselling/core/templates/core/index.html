@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+<div class="mt-6 p-6 rounded-xl bg-gray-100">
+    <h2 class="mb-6 text-xl">Newest arrival</h2>
+    <div class="grid grid-cols-4 gap-3">
+        {% for car in cars%}
+        <div>
+            <a href="{% url 'cars:detail' car.id %}">
+                <div>
+                    <img src="{{car.image.url}}" class="h-55 w-96 object-fill rounded-xl">
+                </div>
+                <div>
+                    <h3>{{car.make}} {{car.model}}</h3>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

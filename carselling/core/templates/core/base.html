@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %} | Car Selling</title>
+</head>
+<body>
+    <nav class="px-6 py-6 flex items-center justify-between  mx-auto border-b border-gray-300 bg-slate-200">
+        
+        <div class="space-x-6">
+            <a href="/" class="text-xl font-semibold">Car Selling</a>
+            <a href="{% url 'about'%}">About</a>
+            <a href="/">Contact</a>
+            <a href="{% url 'commu'%}">Community</a>
+        </div>  
+        <form class="max-w-md">
+            <input class="w-full bg-transparent placeholder:text-slate-900 text-sm border border-slate-400 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-500 hover:border-slate-500 shadow-sm focus:shadow" placeholder="Search for cars" />
+        </form>
+    </nav>
+
+    <div class="px-10 py-6">
+        {%block content%}
+        {%endblock%}
+    </div>
+
+    <footer class="flex justify-between p-5 bg-gray-500">
+        <div class="flex flex-col place-items-end">
+            <div class="pb-2">
+                <a href="/" class="text-white hover:text-slate-900">Selling a car</a>
+            </div>
+            <div class="pb-2">
+                <a href="/" class="text-white hover:text-slate-900">Buying a car</a>
+            </div>
+            <div class="pb-2">
+                <a href="/" class="text-white hover:text-slate-900">Contact us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'core/base.html'%}
+
+{% block title %} {{car.make}} {{car.model}}{% endblock %}
+
+{% block content %}
+
+<div class="grid grid-cols-5 gap-4 ">
+    <div class="col-span-2">
+        <img src="{{car.image.url}}" class="rounded-xl">
+    </div>
+
+    <div class="col-span-3 bg-gray-200 rounded-xl">
+        <h2 class="p-5 text-xl font-semibold">{{car.make}} {{car.model}}</h2>
+        <div class="pt-2 pl-3 pb-4"><h3>Price: ${{car.price}} </h3></div>
+        <div class="pt-2 pl-3 pb-4">Year: {{car.year}}</div>
+        <div class="pt-2 pl-3 pb-4">Color: {{car.color}}</div>
+        <div class="pt-2 pl-3 pb-4">Mileage: {{car.mileage}} Miles</div>
+        <div class="pt-2 pl-3 pb-4">Engine: {{car.engine}}</div>
+        <div class="pt-2 pl-3 pb-4">Transmission: {{car.transmission_type}}</div>
+    </div>
+    
+</div>
+
+{% endblock %}
