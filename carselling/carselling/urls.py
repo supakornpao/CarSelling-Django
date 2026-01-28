@@ -21,9 +21,7 @@ from core.views import index,about,commu
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index,name='index'),
-    path('about/',about,name='about'),
-    path('commu/',commu,name='commu'),
-    path('cars/',include('cars.urls'))
+    path('',include('core.urls')),
+    path('cars/',include('cars.urls')),
+    path('admin/', admin.site.urls)
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
